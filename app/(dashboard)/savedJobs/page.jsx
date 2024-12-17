@@ -1,4 +1,4 @@
-import AppliedJobs from "@/components/User/SavedJobs";
+import AppliedJobs from "../../../components/User/savedJobs";
 
 
 export default function UserActivityPage() {
