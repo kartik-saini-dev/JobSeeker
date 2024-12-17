@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { createJob } from "@/services/createjob";
 import JobFormInput from "@/components/formElements/JobFormInput";
 import RequirementField from "@/components/formElements/RequirementField";
-import ResponsibilityField from "@/components/formElements/ResponsibilityField";
+import ResponsibilityField from "../../../components/formElements/ResponsibilityField";
 import ImageUploader from "@/components/formElements/ImageUploader";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
