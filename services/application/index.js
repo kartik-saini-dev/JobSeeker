@@ -37,7 +37,7 @@ export const applyJob = async (applicationDetail) => {
   export const fetchApplicationsList = async (jobId) => {
     try {
 
-      const response = await fetch(`http://localhost:3000/api/jobApplications?jobId=${jobId}`, {
+      const response = await fetch(`${process.env.BASE_URL}/api/jobApplications?jobId=${jobId}`, {
         method: "GET",
         headers: {
           "content-type": "application/json",

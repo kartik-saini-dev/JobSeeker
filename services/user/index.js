@@ -1,6 +1,6 @@
 export const fetchUserInfo = async (userId) => {
     try {
-      const response = await fetch(`http:localhost:3000/api/users/?userId=${userId}`, {
+      const response = await fetch(`${process.env.BASE_URL}/api/users/?userId=${userId}`, {
         method: "GET",
         headers: {
           "content-type": "application/json",

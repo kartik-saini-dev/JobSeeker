@@ -1,6 +1,6 @@
 export const fetchJobsList = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/api/jobs/getJobs/getJobList?recruiterId=${id}`, {
+      const response = await fetch(`${process.env.BASE_URL}/api/jobs/getJobs/getJobList?recruiterId=${id}`, {
         method: "GET",
         headers: {
           "content-type": "application/json",
@@ -19,7 +19,7 @@ export const fetchJobsList = async (id) => {
   
   export const fetchJobs = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/api/jobs/getJobs`, {
+      const response = await fetch(`${process.env.BASE_URL}/api/jobs/getJobs`, {
         method: "GET",
         cache: "no-store",
       });
