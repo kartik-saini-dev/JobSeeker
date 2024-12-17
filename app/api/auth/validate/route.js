@@ -1,0 +1,34 @@
+import jwt from "jsonwebtoken";
+import { NextResponse } from "next/server";
+
+export async function GET(req) {
+  try {
+    
+
+    const token = req.headers.get("cookie")?.split("=")[1];
+      
+        
+        
+    if (!token) {
+      return NextResponse.json({
+        success: false,
+        message: "Token is missing",
+      });
+    }
+
+    // Verify the token
+    const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
+
+    // Return user type if token is valid
+    return NextResponse.json({
+      success: true,
+      userType: decoded.userType,
+    });
+  } catch (error) {
+    console.error("Token validation error:", error);
+    return NextResponse.json({
+      success: false,
+      message: "Invalid or expired token",
+    });
+  }
+}
