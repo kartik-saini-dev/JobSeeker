@@ -1,10 +1,10 @@
-import SavedJobs from "@/components/User/SavedJobs";
+import AppliedJobs from "@/components/User/SavedJobs";
 
 
 export default function UserActivityPage() {
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-      <SavedJobs />
+      <AppliedJobs />
 
     </div>
   );
