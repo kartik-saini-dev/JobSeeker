@@ -35,12 +35,8 @@ export const fetchJobsList = async (id) => {
   
   export const fetchJob = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/api/jobs/getJobs/singleJob?jobId=${id}`, {
+      const response = await fetch(`${process.env.BASE_URL}api/jobs/getJobs/singleJob?jobId=${id}`, {
         method: "GET",
-        headers: {
-          "content-type": "application/json",
-          // Authorization: `Bearer ${Cookies.get("token")}`,
-        },
         cache: "no-store",
       });
   
@@ -52,21 +48,3 @@ export const fetchJobsList = async (id) => {
     }
   };
 
-  export const fetchAppliedJobs = async (id) => {
-    try {
-      const response = await fetch(`http://localhost:3000/api/jobs/getJobs/singleJob?jobId=${id}`, {
-        method: "GET",
-        headers: {
-          "content-type": "application/json",
-          // Authorization: `Bearer ${Cookies.get("token")}`,
-        },
-        cache: "no-store",
-      });
-  
-      const data = await response.json();
-  
-      return data;
-    } catch (error) {
-      console.log(error);
-    }
-  };
