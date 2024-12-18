@@ -33,7 +33,7 @@ export const fetchJobsList = async (id) => {
   };
   
   
-  export const fetchJob = async (id) => {
+  export const fetchSingleJob = async (id) => {
     try {
       const response = await fetch(`${process.env.BASE_URL}api/jobs/getJobs/singleJob?jobId=${id}`, {
         method: "GET",
