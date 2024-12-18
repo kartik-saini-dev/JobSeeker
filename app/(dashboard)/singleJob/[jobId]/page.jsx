@@ -1,7 +1,7 @@
 
 import RightSidebar from "@/components/User/RightSidebar";
 import SingleJob from "@/components/Jobs/singleJob";
-import { fetchJob } from '@/services/fetchJob';
+import { fetchSingleJob } from '@/services/fetchJob';
 
 
 const singleJobPage = async ({ params: { jobId } }) => {
@@ -9,7 +9,7 @@ const singleJobPage = async ({ params: { jobId } }) => {
 
 
     // Fetch dynamic jobs from API
-    const singleUserJob = await fetchJob(jobId);
+    const singleUserJob = await fetchSingleJob(jobId);
 
     
     return (
