@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { createJob } from "@/services/createjob";
 import JobFormInput from "@/components/formElements/JobFormInput";
 import RequirementField from "@/components/formElements/RequirementField";
-import ResponsibilityField from "../../components/formElements/ResponsibilityField"
+// import ResponsibilityField from "../../components/formElements/ResponsibilityField"
 import ImageUploader from "@/components/formElements/ImageUploader";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
@@ -324,12 +324,12 @@ const CreateJob = () => {
           onRemove={(index) => setJobData((prev) => ({ ...prev, requirements: prev.requirements.filter((_, i) => i !== index) }))}
           onChange={(index, value) => setJobData((prev) => ({ ...prev, requirements: prev.requirements.map((req, i) => (i === index ? value : req)) }))}
         />
-        <ResponsibilityField
+{/*         <ResponsibilityField
           responsibilities={jobData.responsibilities}
           onAdd={() => setJobData((prev) => ({ ...prev, responsibilities: [...prev.responsibilities, ""] }))}
           onRemove={(index) => setJobData((prev) => ({ ...prev, responsibilities: prev.responsibilities.filter((_, i) => i !== index) }))}
           onChange={(index, value) => setJobData((prev) => ({ ...prev, responsibilities: prev.responsibilities.map((resp, i) => (i === index ? value : resp)) }))}
-        />
+        /> */}
         <ImageUploader files={files} setFiles={setFiles} onUpload={uploadToCloudinary} onDelete={handleDeleteImage} />
         <button type="submit" className="px-5 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 disabled:bg-gray-400" disabled={loading}>
           {loading ? "Submitting..." : "Create Job"}
